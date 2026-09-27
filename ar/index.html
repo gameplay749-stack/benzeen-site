@@ -22,6 +22,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=ibm-plex-sans:400,500,600,700|ibm-plex-sans-arabic:400,500,600,700&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Benzeen_","operatingSystem":"iOS","applicationCategory":"UtilitiesApplication","url":"https://benzeen.app/","offers":{"@type":"Offer","price":"0","priceCurrency":"AED"},"inLanguage":["en","ar"]}</script>
 </head>
@@ -43,7 +45,7 @@
     <h1>كل درهم تكلّفه سيارتك.</h1>
     <p class="h1-second" lang="en" dir="ltr">Every dirham your car costs.</p>
     <p class="lede">الوقود وسالك ودرب والصيانة والمخالفات، تُتابع تلقائيًا. توقفت في المحطة؟ يسألك Benzeen_‎ كم دفعت. مررت ببوابة؟ تُحسب بالسعر الصحيح. وصديقك الميكانيكي يذكّرك قبل موعد تغيير الزيت.</p>
-    <div class="ctas"><span class="btn btn-store" aria-disabled="true">قريبًا على App Store</span><a class="btn btn-ghost" href="mailto:abdosh545@gmail.com?subject=Benzeen_%20early%20access" rel="noopener">احصل على وصول مبكر</a></div>
+    <div class="ctas"><span class="btn btn-store" aria-disabled="true">قريبًا على App Store</span><a class="btn btn-ghost" href="mailto:support@benzeen.app?subject=Benzeen_%20early%20access" rel="noopener">احصل على وصول مبكر</a></div>
   </div>
   <img class="hero-img" src="../assets/hero-ar.jpg" alt="تطبيق Benzeen_‎ على iPhone: الشاشة الرئيسية مع إشعار يسأل «هل تعبّئ الوقود في أدنوك · البرشاء؟»" width="720" height="1040" fetchpriority="high">
 </div></section>
@@ -81,17 +83,41 @@
 <section class="end"><div class="wrap end-in">
   <h2>كن أول من يعرف يوم الإطلاق.</h2>
   <p>راسلنا وسنخبرك يوم وصول Benzeen_‎ إلى App Store.</p>
-  <div class="ctas"><a class="btn btn-light" href="mailto:abdosh545@gmail.com?subject=Benzeen_%20early%20access" rel="noopener">احصل على وصول مبكر</a></div>
-  <p class="small">أسئلة؟ راسلنا على <a href="mailto:abdosh545@gmail.com" dir="ltr">abdosh545@gmail.com</a></p>
+  <div class="ctas"><a class="btn btn-light" href="mailto:support@benzeen.app?subject=Benzeen_%20early%20access" rel="noopener">احصل على وصول مبكر</a></div>
+  <p class="small">أسئلة؟ راسلنا على <a href="mailto:support@benzeen.app" dir="ltr">support@benzeen.app</a></p>
 </div></section>
 </main>
 <footer class="foot"><div class="wrap foot-in">
   <div><span class="wm" dir="ltr">Benzeen<span>_</span></span><p class="muted small">‏Benzeen_‎ تطبيق مستقل وغير تابع لهيئة الطرق والمواصلات أو سالك أو مركز النقل المتكامل (درب) أو أدنوك أو اينوك أو إمارات.</p></div>
   <nav class="foot-links" aria-label="Footer">
     <a href="../privacy">الخصوصية</a><a href="../support">الدعم</a>
-    <a href="mailto:abdosh545@gmail.com" dir="ltr">abdosh545@gmail.com</a><a href="../" lang="en">English</a>
+    <a href="mailto:support@benzeen.app" dir="ltr">support@benzeen.app</a><a href="../" lang="en">English</a>
   </nav>
   <p class="muted small copy">© 2026 Benzeen_‎</p>
 </div></footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".band h2, .steps li, .feat, .shots img, .uae li, .privacy-in, .faq details, .end-in > *, .doc section");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty("--i", Math.min(i, 6));
+    el.classList.add("reveal");
+    el.addEventListener("transitionend", function done() {
+      el.classList.remove("reveal", "in");
+      el.style.removeProperty("--i");
+      el.removeEventListener("transitionend", done);
+    });
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>

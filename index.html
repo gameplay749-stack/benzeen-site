@@ -22,6 +22,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=ibm-plex-sans:400,500,600,700|ibm-plex-sans-arabic:400,500,600,700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Benzeen_","operatingSystem":"iOS","applicationCategory":"UtilitiesApplication","url":"https://benzeen.app/","offers":{"@type":"Offer","price":"0","priceCurrency":"AED"},"inLanguage":["en","ar"]}</script>
 </head>
@@ -43,7 +45,7 @@
     <h1>Every dirham your car costs.</h1>
     <p class="h1-second" lang="ar" dir="rtl">كل درهم تكلّفه سيارتك</p>
     <p class="lede">Fuel, Salik and Darb, service and fines, tracked on their own. Stop at the pump and Benzeen_ asks what you paid. Pass a toll gate and it&#x27;s counted at the right price. Your mechanic friend reminds you before the oil change is due.</p>
-    <div class="ctas"><span class="btn btn-store" aria-disabled="true">App Store · coming soon</span><a class="btn btn-ghost" href="mailto:abdosh545@gmail.com?subject=Benzeen_%20early%20access" rel="noopener">Get early access</a></div>
+    <div class="ctas"><span class="btn btn-store" aria-disabled="true">App Store · coming soon</span><a class="btn btn-ghost" href="mailto:support@benzeen.app?subject=Benzeen_%20early%20access" rel="noopener">Get early access</a></div>
   </div>
   <img class="hero-img" src="assets/hero-en.jpg" alt="Benzeen_ on an iPhone: the Home screen with a notification asking “Filling up at ADNOC · Al Barsha?”" width="720" height="1040" fetchpriority="high">
 </div></section>
@@ -81,17 +83,41 @@
 <section class="end"><div class="wrap end-in">
   <h2>Be there on launch day.</h2>
   <p>Email us and we&#x27;ll tell you the day Benzeen_ lands on the App Store.</p>
-  <div class="ctas"><a class="btn btn-light" href="mailto:abdosh545@gmail.com?subject=Benzeen_%20early%20access" rel="noopener">Get early access</a></div>
-  <p class="small">Questions? Email <a href="mailto:abdosh545@gmail.com" dir="ltr">abdosh545@gmail.com</a></p>
+  <div class="ctas"><a class="btn btn-light" href="mailto:support@benzeen.app?subject=Benzeen_%20early%20access" rel="noopener">Get early access</a></div>
+  <p class="small">Questions? Email <a href="mailto:support@benzeen.app" dir="ltr">support@benzeen.app</a></p>
 </div></section>
 </main>
 <footer class="foot"><div class="wrap foot-in">
   <div><span class="wm" dir="ltr">Benzeen<span>_</span></span><p class="muted small">Benzeen_ is independent and not affiliated with the RTA, Salik, ITC (Darb), ADNOC, ENOC or Emarat.</p></div>
   <nav class="foot-links" aria-label="Footer">
     <a href="privacy">Privacy</a><a href="support">Support</a>
-    <a href="mailto:abdosh545@gmail.com" dir="ltr">abdosh545@gmail.com</a><a href="ar/" lang="ar">العربية</a>
+    <a href="mailto:support@benzeen.app" dir="ltr">support@benzeen.app</a><a href="ar/" lang="ar">العربية</a>
   </nav>
   <p class="muted small copy">© 2026 Benzeen_‎</p>
 </div></footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".band h2, .steps li, .feat, .shots img, .uae li, .privacy-in, .faq details, .end-in > *, .doc section");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty("--i", Math.min(i, 6));
+    el.classList.add("reveal");
+    el.addEventListener("transitionend", function done() {
+      el.classList.remove("reveal", "in");
+      el.style.removeProperty("--i");
+      el.removeEventListener("transitionend", done);
+    });
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>

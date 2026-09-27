@@ -19,6 +19,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=ibm-plex-sans:400,500,600,700|ibm-plex-sans-arabic:400,500,600,700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -77,7 +79,7 @@
 
   <section>
     <h2>Contact</h2>
-    <p>Questions about privacy: <a href="mailto:abdosh545@gmail.com">abdosh545@gmail.com</a></p>
+    <p>Questions about privacy: <a href="mailto:support@benzeen.app">support@benzeen.app</a></p>
   </section>
 
   <div id="ar" lang="ar" dir="rtl" class="ar-block">
@@ -100,7 +102,7 @@
     </section>
     <section>
       <h2>للتواصل</h2>
-      <p><a href="mailto:abdosh545@gmail.com">abdosh545@gmail.com</a></p>
+      <p><a href="mailto:support@benzeen.app">support@benzeen.app</a></p>
     </section>
   </div>
 </main>
@@ -108,9 +110,33 @@
   <div><span class="wm" dir="ltr">Benzeen<span>_</span></span><p class="muted small">Benzeen_ is independent and not affiliated with the RTA, Salik, ITC (Darb), ADNOC, ENOC or Emarat.</p></div>
   <nav class="foot-links" aria-label="Footer">
     <a href="privacy">Privacy</a><a href="support">Support</a>
-    <a href="mailto:abdosh545@gmail.com" dir="ltr">abdosh545@gmail.com</a><a href="ar/" lang="ar">العربية</a>
+    <a href="mailto:support@benzeen.app" dir="ltr">support@benzeen.app</a><a href="ar/" lang="ar">العربية</a>
   </nav>
   <p class="muted small copy">© 2026 Benzeen_‎</p>
 </div></footer>
+<script>
+(function () {
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var els = document.querySelectorAll(".band h2, .steps li, .feat, .shots img, .uae li, .privacy-in, .faq details, .end-in > *, .doc section");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty("--i", Math.min(i, 6));
+    el.classList.add("reveal");
+    el.addEventListener("transitionend", function done() {
+      el.classList.remove("reveal", "in");
+      el.style.removeProperty("--i");
+      el.removeEventListener("transitionend", done);
+    });
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>

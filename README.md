@@ -1,6 +1,4 @@
-# Benzeen_
+# benzeen.app
 
-Privacy policy and support pages for the Benzeen_ iOS app.
-
-- Support: https://gameplay749-stack.github.io/benzeen-site/
-- Privacy: https://gameplay749-stack.github.io/benzeen-site/privacy.html
+Website for Benzeen_, the UAE car-cost app: landing page (English and Arabic), support and privacy policy.
+Plain HTML and CSS, served by GitHub Pages. The source lives in the app project under docs/site.

@@ -173,3 +173,30 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
   .reveal { opacity: 1; transform: none; transition: none; }
   .feat:hover, .steps li:hover, .btn:hover { transform: none; }
 }
+
+/* guides: fuel prices and toll rates */
+@media (max-width: 860px) { .top nav .hide-md { display: none; } }
+:root { --up: #B4530A; }
+@media (prefers-color-scheme: dark) { :root { --up: #F59E0B; } }
+.crumbs { font-size: 14px; color: var(--muted); margin: 0 0 14px; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--brand); }
+.updated { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
+.table-wrap { overflow-x: auto; margin: 4px 0; }
+.doc table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 16px; }
+.doc th, .doc td { padding: 10px 12px; text-align: start; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.doc th { font-size: 14px; color: var(--muted); font-weight: 600; }
+.doc .num { text-align: end; }
+.doc tbody tr:last-child > * { border-bottom: 0; }
+.doc tbody th { color: var(--ink); font-size: 16px; white-space: normal; }
+.up { color: var(--up); }
+.down { color: var(--brand); }
+.calc { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 8px 0 12px; }
+.calc label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.calc input, .calc select { font: inherit; font-size: 17px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink); min-height: 48px; }
+.calc-out { margin: 0; color: var(--ink-2); }
+.calc-out strong { font-family: var(--display); font-size: 30px; color: var(--ink); }
+.doc section.cta-card { background: var(--g); border-color: transparent; color: #fff; }
+.doc section.cta-card p { color: rgba(255, 255, 255, .9); }
+.doc section.cta-card a { color: #fff; }
+.sources { font-size: 14px; color: var(--muted); }

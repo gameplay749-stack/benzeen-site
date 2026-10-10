@@ -189,6 +189,7 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .doc .num { text-align: end; }
 .doc tbody tr:last-child > * { border-bottom: 0; }
 .doc tbody th { color: var(--ink); font-size: 16px; white-space: normal; }
+.doc tbody th small { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
 .up { color: var(--up); }
 .down { color: var(--brand); }
 .calc { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 8px 0 12px; }
@@ -200,3 +201,100 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .doc section.cta-card p { color: rgba(255, 255, 255, .9); }
 .doc section.cta-card a { color: #fff; }
 .sources { font-size: 14px; color: var(--muted); }
+@media (max-width: 600px) { .doc th, .doc td { padding: 9px 6px; } .doc thead th { white-space: normal; } .doc section { padding: 20px 18px; } }
+
+/* charts (tools/site/charts.py). Colours were checked with a colour-vision validator:
+   the four line colours stay distinct for colour-blind readers in both modes, and the
+   toll steps read as one green ramp (free, then AED 4-4.20, then AED 6.30). */
+:root {
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --toll-free: #e2f5f0; --toll-mid: #2a9e88; --toll-peak: #006757;
+  --toll-free-ink: #374151; --toll-mid-ink: #111827; --toll-peak-ink: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --toll-free: #1d332e; --toll-mid: #24a28b; --toll-peak: #80d8c3;
+    --toll-free-ink: #d1d5db; --toll-mid-ink: #0b0f0e; --toll-peak-ink: #0b0f0e;
+  }
+}
+.chart { position: relative; margin: 18px 0 14px; container-type: inline-size; }
+.chart [hidden] { display: none !important; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0 0 14px; padding: 0; font-size: 14px; color: var(--ink-2); }
+.chart-legend li { display: inline-flex; align-items: center; gap: 8px; }
+.key-line { display: inline-block; flex: none; width: 16px; height: 2px; border-radius: 1px; background: currentColor; }
+.key-box { display: inline-block; flex: none; width: 12px; height: 12px; border-radius: 3px; }
+.s1 { --c: var(--s1); } .s2 { --c: var(--s2); } .s3 { --c: var(--s3); } .s4 { --c: var(--s4); }
+.key-line.s1, .key-line.s2, .key-line.s3, .key-line.s4 { background: var(--c); }
+.key-box.free { background: var(--toll-free); box-shadow: inset 0 0 0 1px var(--line); }
+.key-box.mid { background: var(--toll-mid); }
+.key-box.peak { background: var(--toll-peak); }
+
+/* line chart: y-axis | plot | end labels, months underneath */
+.lc { display: grid; grid-template-columns: 34px minmax(0, 1fr) 118px; grid-template-rows: 240px auto; column-gap: 8px; }
+.lc-y { position: relative; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.lc-y span { position: absolute; inset-inline-end: 0; transform: translateY(-50%); line-height: 1; }
+.lc-plot { position: relative; cursor: crosshair; touch-action: pan-y; border-radius: 4px; }
+.lc-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.lc-grid { stroke: var(--line); stroke-width: 1; }
+.lc-line { fill: none; stroke: var(--c); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.lc-dot { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--card); pointer-events: none; }
+.lc-cross { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--muted); opacity: .6; pointer-events: none; }
+.lc-gutter { position: relative; font-size: 13px; line-height: 16px; }
+.lc-leaders { position: absolute; top: 0; overflow: visible; }
+.lc-leaders line { stroke: var(--muted); stroke-width: 1; opacity: .7; }
+.lc-label { position: absolute; transform: translateY(-50%); white-space: nowrap; color: var(--ink-2); }
+.lc-label b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.lc-x { grid-column: 2; position: relative; height: 26px; font-size: 12px; color: var(--muted); }
+.lc-x span { position: absolute; top: 8px; transform: translateX(-50%); white-space: nowrap; line-height: 1; }
+.lc-x .first { transform: none; }
+.lc-x .last { transform: translateX(-100%); }
+
+/* toll timeline: name | 24-hour bar */
+.tl { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 10px 14px; align-items: center; border-radius: 6px; }
+.tl-name { font-size: 15px; font-weight: 600; line-height: 1.25; }
+.tl-name small { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
+.tl-bar { position: relative; height: 24px; }
+.tl-seg { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; white-space: nowrap; }
+.tl-seg.first { border-radius: 4px 0 0 4px; }
+.tl-seg.last { border-radius: 0 4px 4px 0; }
+.tl-seg.first.last { border-radius: 4px; }
+.tl-seg.free { background: var(--toll-free); color: var(--toll-free-ink); font-weight: 500; }
+.tl-seg.mid { background: var(--toll-mid); color: var(--toll-mid-ink); }
+.tl-seg.peak { background: var(--toll-peak); color: var(--toll-peak-ink); }
+.tl-seg.on { z-index: 1; box-shadow: 0 0 0 2px var(--card), 0 0 0 4px var(--ink); }
+.tl-axis { grid-column: 2; position: relative; height: 16px; font-size: 12px; color: var(--muted); }
+.tl-axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; line-height: 1; }
+.tl-axis .first { transform: none; }
+.tl-axis .last { transform: translateX(-100%); }
+
+/* tooltip: the value first, then what it is */
+.chart-tip { position: absolute; top: 6px; z-index: 3; pointer-events: none; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; box-shadow: 0 8px 24px rgba(17, 24, 39, .12); font-size: 13px; line-height: 1.45; white-space: nowrap; }
+.tip-t { color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+.tip-r { display: flex; align-items: center; gap: 8px; }
+.tip-r b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.tip-r span { color: var(--ink-2); }
+
+@container (max-width: 520px) {
+  .lc { grid-template-columns: 30px minmax(0, 1fr) 84px; }
+  .lc-label b { display: none; }
+  .lc-x .minor { display: none; }
+  .tl { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .tl-name { display: flex; gap: 6px; align-items: baseline; margin-top: 8px; }
+  .tl-name small { display: inline; }
+  .tl-axis { grid-column: 1; margin-top: 2px; }
+}
+/* Windows high contrast: lines get dash patterns, toll blocks get hatching, labels stay readable */
+@media (forced-colors: active) {
+  .lc-line.s2 { stroke-dasharray: 7 4; } .lc-line.s3 { stroke-dasharray: 2 3; } .lc-line.s4 { stroke-dasharray: 9 3 2 3; }
+  .tl-seg { forced-color-adjust: none; background: Canvas; color: CanvasText; border: 1px solid CanvasText; }
+  .tl-seg.mid { background: repeating-linear-gradient(45deg, CanvasText 0 1px, Canvas 1px 6px); }
+  .tl-seg.peak { background: repeating-linear-gradient(135deg, CanvasText 0 2px, Canvas 2px 5px); }
+  .tl-seg span { background: Canvas; padding: 1px 3px; }
+  .key-line { forced-color-adjust: none; height: 0; background: none !important; border-top: 2px solid CanvasText; }
+  .key-line.s2 { border-top-style: dashed; } .key-line.s3 { border-top-style: dotted; } .key-line.s4 { border-top: 3px double CanvasText; }
+  .key-box { forced-color-adjust: none; background: Canvas !important; border: 1px solid CanvasText; }
+  .key-box.mid { background: repeating-linear-gradient(45deg, CanvasText 0 1px, Canvas 1px 4px) !important; }
+  .key-box.peak { background: repeating-linear-gradient(135deg, CanvasText 0 2px, Canvas 2px 4px) !important; }
+  .lc-dot { forced-color-adjust: none; background: CanvasText; box-shadow: 0 0 0 2px Canvas; }
+}

@@ -106,4 +106,18 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/car-service-intervals-uae"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/car-service-intervals-uae"/>
   </url>
+  <url>
+    <loc>https://benzeen.app/guides</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/ar/guides</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
+  </url>
 </urlset>

@@ -97,6 +97,7 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .uae li { display: grid; gap: 6px; align-content: start; padding-top: 16px; border-top: 3px solid var(--brand); }
 .uae b { font-size: 18px; }
 .uae span { color: var(--ink-2); font-size: 16px; }
+.uae-more { margin: 28px 0 0; color: var(--ink-2); font-size: 16px; }
 .privacy-in { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: start; max-width: 860px; }
 .privacy-in .ico { width: 48px; height: 48px; margin: 4px 0 0; }
 .privacy-in h2 { margin-bottom: 14px; }
@@ -116,7 +117,7 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 
 /* footer */
 .foot { border-top: 1px solid var(--line); padding-block: 32px 40px; }
-.foot-in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 32px; align-items: start; }
+.foot-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 14px 32px; align-items: start; }
 .foot-in p { margin: 6px 0 0; max-width: 40em; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: flex-end; }
 .foot-links a { color: var(--ink-2); text-decoration: none; font-size: 15px; }

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.bunny.net; font-src 'self' https://fonts.bunny.net; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <title>Benzeen_ · UAE Fuel, Salik &amp; Car Cost Tracker for iPhone</title>
 <meta name="description" content="Free iPhone app for UAE drivers: petrol, Salik and Darb tolls, service reminders and traffic fines, tracked on their own. Coming soon to the App Store.">
 <meta name="google-site-verification" content="J5_Kuh2WO_0FQAUInQjoF2083t0CLziX9kdRz6DBzwk">
@@ -101,29 +102,6 @@
   </nav>
   <p class="muted small copy">© 2026 Benzeen_‎</p>
 </div></footer>
-<script>
-(function () {
-  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var els = document.querySelectorAll(".band h2, .steps li, .feat, .shots img, .uae li, .privacy-in, .faq details, .end-in > *, .doc section");
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("in");
-      io.unobserve(e.target);
-    });
-  }, { rootMargin: "0px 0px -8% 0px" });
-  els.forEach(function (el) {
-    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
-    el.style.setProperty("--i", Math.min(i, 6));
-    el.classList.add("reveal");
-    el.addEventListener("transitionend", function done() {
-      el.classList.remove("reveal", "in");
-      el.style.removeProperty("--i");
-      el.removeEventListener("transitionend", done);
-    });
-    io.observe(el);
-  });
-})();
-</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

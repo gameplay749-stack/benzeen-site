@@ -318,3 +318,19 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .guide-list p { margin: 0 0 12px; color: var(--ink-2); font-size: 16px; }
 .guide-list .updated { margin: auto 0 0; }
 @media (prefers-reduced-motion: reduce) { .guide-list a:hover { transform: none; } }
+
+/* App Store badge (Apple's official artwork, unmodified) */
+.store-badge { display: inline-flex; align-items: center; border-radius: 10px; }
+.store-badge img { display: block; height: 50px; width: auto; }
+.store-badge:hover { transform: translateY(-1px); }
+/* social icons in the top bar */
+.top .top-social { display: inline-flex; gap: 0; margin-inline-start: 4px; }
+.top .top-social a { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; color: var(--ink-2); }
+.top .top-social a:hover { color: var(--brand); }
+/* Latest from Instagram (our own images, no embed or tracking) */
+.ig-in h2 { margin: 0 0 20px; }
+.ig-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.ig-grid a { display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.ig-grid img { display: block; width: 100%; height: auto; }
+.ig-follow { font-weight: 700; color: var(--brand); text-decoration: none; }
+@media (max-width: 720px) { .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

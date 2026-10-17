@@ -130,6 +130,10 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .doc [lang="ar"] h1, html[lang="ar"] .doc h1 { font-family: var(--arabic); letter-spacing: 0; }
 .lede-doc { font-size: 19px; color: var(--ink-2); margin: 0 0 24px; }
 .doc section, .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin: 16px 0; }
+/* Ad units in the guides (Google AdSense): labelled, with room kept so the page doesn't jump when one loads. */
+.ad { margin: 16px 0; min-height: 120px; }
+.ad-label { margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.ad ins { display: block; }
 .doc section h2, .card h2 { font-size: 21px; letter-spacing: -.01em; margin: 0 0 8px; }
 .doc ul { padding-inline-start: 20px; }
 .ar-block { margin-top: 56px; }

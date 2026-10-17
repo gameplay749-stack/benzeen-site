@@ -160,3 +160,11 @@
     hiders.forEach(function (h) { if (!h[0].contains(e.target)) h[1](); });
   });
 })();
+
+/* Guides: ask Google AdSense to fill each ad unit (its loader is in the page head). One push per unit. */
+(function () {
+  var units = document.querySelectorAll("ins.adsbygoogle");
+  if (!units.length) return;
+  window.adsbygoogle = window.adsbygoogle || [];
+  units.forEach(function () { window.adsbygoogle.push({}); });
+})();

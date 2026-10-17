@@ -201,6 +201,8 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .doc section.cta-card { background: var(--g); border-color: transparent; color: #fff; }
 .doc section.cta-card p { color: rgba(255, 255, 255, .9); }
 .doc section.cta-card a { color: #fff; }
+.doc section.cta-card a.btn-light { color: #0A6B5B; }
+.doc .cta-store { margin: 18px 0 0; }
 .sources { font-size: 14px; color: var(--muted); }
 @media (max-width: 600px) { .doc th, .doc td { padding: 9px 6px; } .doc thead th { white-space: normal; } .doc section { padding: 20px 18px; } }
 

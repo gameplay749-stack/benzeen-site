@@ -338,3 +338,5 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .ig-grid img { display: block; width: 100%; height: auto; }
 .ig-follow { font-weight: 700; color: var(--brand); text-decoration: none; }
 @media (max-width: 720px) { .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .top .top-social a { width: 32px; } .top .top-social { margin-inline-start: 0; } }
+@media (max-width: 379px) { .top .top-social { display: none; } }

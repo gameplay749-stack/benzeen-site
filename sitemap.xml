@@ -122,16 +122,44 @@
   </url>
   <url>
     <loc>https://benzeen.app/guides</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
   </url>
   <url>
     <loc>https://benzeen.app/ar/guides</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/salik-monthly-cost</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/salik-monthly-cost"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/salik-monthly-cost"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/salik-monthly-cost"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/ar/salik-monthly-cost</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/salik-monthly-cost"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/salik-monthly-cost"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/salik-monthly-cost"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/dubai-parking-fines</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/dubai-parking-fines"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/dubai-parking-fines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/dubai-parking-fines"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/ar/dubai-parking-fines</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/dubai-parking-fines"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/dubai-parking-fines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/dubai-parking-fines"/>
   </url>
 </urlset>

@@ -168,3 +168,27 @@
   window.adsbygoogle = window.adsbygoogle || [];
   units.forEach(function () { window.adsbygoogle.push({}); });
 })();
+
+/* Salik cost guide: what Salik costs a month and a year. Rates come from the form's data attributes. */
+(function () {
+  var form = document.getElementById("salik-calc");
+  if (!form) return;
+  var peak = parseFloat(form.getAttribute("data-peak")), off = parseFloat(form.getAttribute("data-off"));
+  var month = document.getElementById("sc-month"), year = document.getElementById("sc-year");
+  var ar = document.documentElement.lang === "ar";
+  function num(id) {
+    var v = String(document.getElementById(id).value).replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); });
+    var n = parseFloat(v);
+    return n > 0 ? n : 0;
+  }
+  function fmt(n) { return Math.round(n).toLocaleString(ar ? "ar-AE-u-nu-latn" : "en-GB"); }
+  function update() {
+    var days = Math.min(num("sc-days"), 31);
+    var m = (num("sc-peak") * peak + num("sc-off") * off) * days + num("sc-sun") * off * 52 / 12;
+    month.textContent = fmt(m);
+    year.textContent = fmt(m * 12);
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  form.addEventListener("input", update);
+  update();
+})();

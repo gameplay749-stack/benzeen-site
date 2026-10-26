@@ -192,3 +192,26 @@
   form.addEventListener("input", update);
   update();
 })();
+
+/* Insurance guide: the legal price range for a 13-month policy (CBUAE tariffs, from the form's data). */
+(function () {
+  var form = document.getElementById("ins-calc");
+  if (!form) return;
+  var tpl = form.getAttribute("data-tpl").split(";").map(function (r) { return r.split(",").map(Number); });
+  var type = document.getElementById("ic-type"), cyl = document.getElementById("ic-cyl"), value = document.getElementById("ic-value");
+  var comp = document.getElementById("ic-comp"), third = document.getElementById("ic-tpl");
+  var ar = document.documentElement.lang === "ar";
+  function fmt(n) { return Math.round(n).toLocaleString(ar ? "ar-AE-u-nu-latn" : "en-GB"); }
+  function update() {
+    var opt = type.options[type.selectedIndex], min = parseFloat(opt.getAttribute("data-min")), rate = parseFloat(opt.getAttribute("data-rate"));
+    var v = parseFloat(String(value.value).replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); }));
+    var max = v > 0 ? Math.max(min, v * rate) : min;
+    comp.textContent = max > min ? fmt(min) + "–" + fmt(max) : fmt(min);
+    var row = tpl[parseInt(cyl.value, 10)], off = type.value === "4x4" ? 2 : 0;
+    third.textContent = fmt(row[off]) + "–" + fmt(row[off + 1]);
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  update();
+})();

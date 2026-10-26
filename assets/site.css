@@ -215,6 +215,8 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 .calc { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 8px 0 12px; }
 .calc label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
 .calc input, .calc select { font: inherit; font-size: 17px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink); min-height: 48px; }
+.calc label.check { display: flex; align-items: center; gap: 10px; align-self: end; min-height: 48px; }
+.calc label.check input { min-height: 0; width: 22px; height: 22px; }
 .calc-out { margin: 0; color: var(--ink-2); }
 .calc-out strong { font-family: var(--display); font-size: 30px; color: var(--ink); }
 .doc section.cta-card { background: var(--g); border-color: transparent; color: #fff; }

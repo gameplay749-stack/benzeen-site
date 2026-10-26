@@ -215,3 +215,25 @@
   form.addEventListener("change", update);
   update();
 })();
+
+/* Trip fuel cost guide: litres and dirhams for a drive at this month's price. */
+(function () {
+  var form = document.getElementById("trip-calc");
+  if (!form) return;
+  var ar = document.documentElement.lang === "ar";
+  function num(id) {
+    var n = parseFloat(String(document.getElementById(id).value).replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); }).replace(",", "."));
+    return n > 0 ? n : 0;
+  }
+  function fmt(n, d) { return n.toLocaleString(ar ? "ar-AE-u-nu-latn" : "en-GB", { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  function update() {
+    var km = num("tc-km") * (document.getElementById("tc-return").checked ? 2 : 1), kml = num("tc-kml"), price = num("tc-grade");
+    var litres = kml > 0 ? km / kml : 0;
+    document.getElementById("tc-l").textContent = kml > 0 ? fmt(litres, 1) : "–";
+    document.getElementById("tc-aed").textContent = kml > 0 ? fmt(litres * price, 2) : "–";
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  update();
+})();

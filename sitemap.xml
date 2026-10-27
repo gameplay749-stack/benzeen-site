@@ -122,14 +122,14 @@
   </url>
   <url>
     <loc>https://benzeen.app/guides</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
   </url>
   <url>
     <loc>https://benzeen.app/ar/guides</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
@@ -189,5 +189,33 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/fuel-cost-per-trip"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/fuel-cost-per-trip"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/fuel-cost-per-trip"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/rta-registration-inspection-fees</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/rta-registration-inspection-fees"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/rta-registration-inspection-fees"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/rta-registration-inspection-fees"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/ar/rta-registration-inspection-fees</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/rta-registration-inspection-fees"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/rta-registration-inspection-fees"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/rta-registration-inspection-fees"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/abu-dhabi-vehicle-services-tamm</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/abu-dhabi-vehicle-services-tamm"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/abu-dhabi-vehicle-services-tamm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/abu-dhabi-vehicle-services-tamm"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/ar/abu-dhabi-vehicle-services-tamm</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/abu-dhabi-vehicle-services-tamm"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/abu-dhabi-vehicle-services-tamm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/abu-dhabi-vehicle-services-tamm"/>
   </url>
 </urlset>

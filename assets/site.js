@@ -237,3 +237,30 @@
   form.addEventListener("change", update);
   update();
 })();
+
+/* Petrol vs diesel vs hybrid guide: monthly and yearly fuel cost for three cars at this month's prices. */
+(function () {
+  var form = document.getElementById("pdh-calc");
+  if (!form) return;
+  var ar = document.documentElement.lang === "ar", diesel = parseFloat(form.getAttribute("data-diesel"));
+  function num(id) {
+    var n = parseFloat(String(document.getElementById(id).value).replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); }).replace(",", "."));
+    return n > 0 ? n : 0;
+  }
+  function fmt(n) { return Math.round(n).toLocaleString(ar ? "ar-AE-u-nu-latn" : "en-GB"); }
+  function put(key, kml, price, km) {
+    var month = kml > 0 ? km / kml * price : 0;
+    document.getElementById("pdh-" + key + "-m").textContent = kml > 0 ? fmt(month) : "–";
+    document.getElementById("pdh-" + key + "-y").textContent = kml > 0 ? fmt(month * 12) : "–";
+  }
+  function update() {
+    var km = num("pdh-km"), petrol = num("pdh-grade");
+    put("p", num("pdh-p"), petrol, km);
+    put("d", num("pdh-d"), diesel, km);
+    put("h", num("pdh-h"), petrol, km);
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  update();
+})();

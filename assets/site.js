@@ -264,3 +264,30 @@
   form.addEventListener("change", update);
   update();
 })();
+
+// EV charging cost calculator (ev-charging-cost-uae): kWh = km × kWh/100 km ÷ 100, cost = kWh × AED/kWh (rates in data-*).
+(function () {
+  var form = document.getElementById("ev-calc");
+  if (!form) return;
+  var ar = document.documentElement.lang === "ar";
+  function num(id) {
+    var n = parseFloat(String(document.getElementById(id).value).replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); }).replace(",", "."));
+    return n > 0 ? n : 0;
+  }
+  function fmt(n) { return Math.round(n).toLocaleString(ar ? "ar-AE-u-nu-latn" : "en-GB"); }
+  function put(key, month, ok) {
+    document.getElementById("ev-" + key + "-m").textContent = ok ? fmt(month) : "–";
+    document.getElementById("ev-" + key + "-y").textContent = ok ? fmt(month * 12) : "–";
+  }
+  function update() {
+    var km = num("ev-km"), kwh = km * num("ev-kwh") / 100, kml = num("ev-kml");
+    ["h1", "h4", "ac", "dc"].forEach(function (k) {
+      put(k, kwh * parseFloat(form.getAttribute("data-" + k)), num("ev-kwh") > 0);
+    });
+    put("p", kml > 0 ? km / kml * num("ev-grade") : 0, kml > 0);
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  update();
+})();

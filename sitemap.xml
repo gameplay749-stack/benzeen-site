@@ -122,14 +122,14 @@
   </url>
   <url>
     <loc>https://benzeen.app/guides</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
   </url>
   <url>
     <loc>https://benzeen.app/ar/guides</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/guides"/>
@@ -245,5 +245,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/ev-charging-cost-uae"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/ev-charging-cost-uae"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/ev-charging-cost-uae"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/fog-rain-driving-fines</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/fog-rain-driving-fines"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/fog-rain-driving-fines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/fog-rain-driving-fines"/>
+  </url>
+  <url>
+    <loc>https://benzeen.app/ar/fog-rain-driving-fines</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benzeen.app/fog-rain-driving-fines"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://benzeen.app/ar/fog-rain-driving-fines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://benzeen.app/fog-rain-driving-fines"/>
   </url>
 </urlset>

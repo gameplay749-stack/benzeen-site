@@ -359,3 +359,7 @@ html[lang="ar"] .band h2, html[lang="ar"] .end h2 { font-family: var(--arabic); 
 @media (max-width: 720px) { .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 420px) { .top .top-social a { width: 32px; } .top .top-social { margin-inline-start: 0; } }
 @media (max-width: 379px) { .top .top-social { display: none; } }
+/* Related guides at the end of each guide: links to its topic neighbours. */
+.doc .related ul { margin: 6px 0 0; padding-inline-start: 1.1em; }
+.doc .related li { margin: 6px 0; color: var(--ink-2); }
+.doc .related a { font-weight: 600; }
